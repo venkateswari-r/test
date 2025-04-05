@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology Quiz (Landscape)</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow-y: auto; /* Enable vertical scrolling */
+            box-sizing: border-box; /* Ensures padding is included in the width and height */
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #333;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        #certificate {
+            display: none;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .certificate-container {
+            border: 5px solid #2a7dfb;
+            padding: 40px;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 10px;
+        }
+
+        .certificate-container h2 {
+            font-size: 30px;
+            color: #2a7dfb;
+        }
+
+        .certificate-container h3 {
+            font-size: 25px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .certificate-container p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .certificate-container .org-name {
+            font-weight: bold;
+            font-size: 24px;
+            margin-top: 30px;
+            color: #2a7dfb;
+        }
+
+        .certificate-container .signature {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .signature div {
+            text-align: center;
+        }
+
+        .signature-line {
+            border-top: 1px solid #000;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Biology Quiz</h1>
+    <form id="bioQuiz">
+        <!-- Asking for the name -->
+        <div class="question">
+            <label for="name">Enter your name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <!-- Asking for today's date -->
+        <div class="question">
+            <label for="date">Enter today's date:</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+
+        <!-- Class 11 Question -->
+        <div class="question">
+            <label>1. Which of the following is a polysaccharide?</label>
+            <input type="radio" name="q1" value="false" required> Glucose<br>
+            <input type="radio" name="q1" value="false"> Fructose<br>
+            <input type="radio" name="q1" value="false"> Sucrose<br>
+            <input type="radio" name="q1" value="true"> Cellulose<br>
+        </div>
+
+        <!-- Class 12 Question -->
+        <div class="question">
+            <label>2. Which hormone regulates the blood glucose level?</label>
+            <input type="radio" name="q2" value="true" required> Insulin<br>
+            <input type="radio" name="q2" value="false"> Thyroxine<br>
+            <input type="radio" name="q2" value="false"> Adrenaline<br>
+            <input type="radio" name="q2" value="false"> Cortisol<br>
+        </div>
+
+        <!-- Class 7 Question -->
+        <div class="question">
+            <label>3. Photosynthesis takes place in which part of the plant cell?</label>
+            <input type="radio" name="q3" value="false" required> Mitochondria<br>
+            <input type="radio" name="q3" value="true"> Chloroplast<br>
+            <input type="radio" name="q3" value="false"> Nucleus<br>
+            <input type="radio" name="q3" value="false"> Cytoplasm<br>
+        </div>
+
+        <!-- Class 8 Question -->
+        <div class="question">
+            <label>4. Which part of the human body is responsible for filtering blood?</label>
+            <input type="radio" name="q4" value="false" required> Lungs<br>
+            <input type="radio" name="q4" value="false"> Liver<br>
+            <input type="radio" name="q4" value="true"> Kidneys<br>
+            <input type="radio" name="q4" value="false"> Heart<br>
+        </div>
+
+        <!-- Class 6 Question -->
+        <div class="question">
+            <label>5. Which of the following is not a mammal?</label>
+            <input type="radio" name="q5" value="false" required> Dolphin<br>
+            <input type="radio" name="q5" value="false"> Bat<br>
+            <input type="radio" name="q5" value="true"> Shark<br>
+            <input type="radio" name="q5" value="false"> Whale<br>
+        </div>
+
+        <!-- Class 9 Question -->
+        <div class="question">
+            <label>6. What is the basic structural and functional unit of life?</label>
+            <input type="radio" name="q6" value="false" required> Tissue<br>
+            <input type="radio" name="q6" value="false"> Organ<br>
+            <input type="radio" name="q6" value="true"> Cell<br>
+            <input type="radio" name="q6" value="false"> System<br>
+        </div>
+
+        <!-- Class 10 Question -->
+        <div class="question">
+            <label>7. What is the powerhouse of the cell?</label>
+            <input type="radio" name="q7" value="false" required> Nucleus<br>
+            <input type="radio" name="q7" value="true"> Mitochondria<br>
+            <input type="radio" name="q7" value="false"> Ribosome<br>
+            <input type="radio" name="q7" value="false"> Endoplasmic Reticulum<br>
+        </div>
+
+        <!-- Class 11 Question -->
+        <div class="question">
+            <label>8. What is the primary function of DNA?</label>
+            <input type="radio" name="q8" value="false" required> Energy storage<br>
+            <input type="radio" name="q8" value="true"> Genetic information storage<br>
+            <input type="radio" name="q8" value="false"> Cellular respiration<br>
+            <input type="radio" name="q8" value="false"> Structural support<br>
+        </div>
+
+        <!-- Class 12 Question -->
+        <div class="question">
+            <label>9. Which of the following is not a part of the central nervous system?</label>
+            <input type="radio" name="q9" value="false" required> Brain<br>
+            <input type="radio" name="q9" value="true"> Nerves<br>
+            <input type="radio" name="q9" value="false"> Spinal cord<br>
+            <input type="radio" name="q9" value="false"> Cerebellum<br>
+        </div>
+
+        <!-- Class 7 Question -->
+        <div class="question">
+            <label>10. What gas do plants take in during photosynthesis?</label>
+            <input type="radio" name="q10" value="false" required> Oxygen<br>
+            <input type="radio" name="q10" value="true"> Carbon dioxide<br>
+            <input type="radio" name="q10" value="false"> Nitrogen<br>
+            <input type="radio" name="q10" value="false"> Hydrogen<br>
+        </div>
+
+        <!-- Submit button -->
+        <div class="question">
+            <button type="button" onclick="checkResults()">Submit Quiz</button>
+        </div>
+    </form>
+
+    <!-- Certificate section -->
+    <div id="certificate" class="certificate-container">
+        <h2>Certificate of Achievement</h2>
+        <h3 id="certName"></h3>
+        <p>This is to certify that</p>
+        <p id="certStatus"></p>
+        <p>has successfully completed the quiz on</p>
+        <p><strong>Biology</strong></p>
+        <p class="org-name">VJ PROs</p>
+
+        <div class="signature">
+            <div>
+                <div class="signature-line"></div>
+				<img src="sign.png"style="width:100px;height:100px;">
+                <p>Signature</p>
+            </div>
+            <div>
+                <div class="signature-line"></div>
+                <p id="certDate">Date</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function checkResults() {
+        const name = document.getElementById('name').value;
+        const date = document.getElementById('date').value;
+
+        if (!name || !date) {
+            alert('Please enter your name and the date!');
+            return;
+        }
+
+        const totalQuestions = 10;
+        let score = 0;
+        const form = document.forms['bioQuiz'];
+        
+        // Loop through each question and calculate score
+        for (let i = 1; i <= totalQuestions; i++) {
+            const answer = form['q' + i]?.value;
+            if (answer === "true") {
+                score++;
+            }
+        }
+
+        // Determine pass or fail
+        const passMark = 8;
+        const passed = score >= passMark;
+        
+        // Show certificate
+        const certificate = document.getElementById('certificate');
+        const certName = document.getElementById('certName');
+        const certStatus = document.getElementById('certStatus');
+        const certDate = document.getElementById('certDate');
+        
+        certName.innerHTML = name;
+        certStatus.innerHTML = passed ? `has passed with a score of ${score}/10.` : `has failed with a score of ${score}/10.`;
+        certDate.innerHTML = date;
+        
+        certificate.style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
